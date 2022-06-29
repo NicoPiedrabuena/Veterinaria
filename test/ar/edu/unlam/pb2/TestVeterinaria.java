@@ -31,7 +31,7 @@ public class TestVeterinaria {
 		Veterinaria veterinaria = new Veterinaria("Del oeste");
 		Dueño dueño = new Dueño(38266294,"Piedrabuena Walter");
 		Mascota mascota = new Mascota ("Eli",1,"chicha",TipoDeMascota.DOMESTICA);
-		Mascota mascota1 = new Mascota ("Nicole",1,"meme",TipoDeMascota.DOMESTICA);
+		Mascota mascota1 = new Mascota ("Nicole",2,"meme",TipoDeMascota.DOMESTICA);
 		veterinaria.recepcionarDueño(dueño);
 		veterinaria.traerDueñoPorDni(38266294).agregarMascota(mascota);
 		veterinaria.traerDueñoPorDni(38266294).agregarMascota(mascota1);
@@ -69,7 +69,7 @@ public class TestVeterinaria {
 		Dueño dueño = new Dueño(38266294,"Piedrabuena Walter");
 		Mascota mascota = new Mascota ("Eli",1,"chicha",TipoDeMascota.DOMESTICA);
 		veterinaria.recepcionarDueño(dueño);
-		veterinaria.traerDueño(38266294).agregarMascota(mascota);
+		dueño.agregarMascota(mascota);
 		veterinaria.iniciarAtencion(38266294,1,0.0);
 		assertEquals ((Integer)1,(Integer)veterinaria.getAtenciones().size());
 	}
@@ -80,7 +80,7 @@ public class TestVeterinaria {
 		Dueño dueño = new Dueño(38266294,"Piedrabuena Walter");
 		Mascota mascota = new Mascota ("Eli",1,"chicha",TipoDeMascota.DOMESTICA);
 		veterinaria.recepcionarDueño(dueño);
-		veterinaria.traerDueño(38266294).agregarMascota(mascota);
+		dueño.agregarMascota(mascota);
 		veterinaria.iniciarAtencion(38266294,1,0.0);
 		
 		Medicamento medicamento = new Medicamento (1,"amoxidal", 100.0);
@@ -117,7 +117,7 @@ public class TestVeterinaria {
 		Mascota mascota = new Mascota ("Eli",1,"chicha",TipoDeMascota.DOMESTICA);
 		Mascota mascota1 = new Mascota ("Nicole",2,"meme",TipoDeMascota.DOMESTICA);
 		veterinaria.recepcionarDueño(dueño);
-		veterinaria.traerDueño(38266294).agregarMascota(mascota);
+		dueño.agregarMascota(mascota);
 		veterinaria.traerDueño(38266294).agregarMascota(mascota1);
 	
 		assertEquals("chicha",veterinaria.obtenerListaDeMascotasDeUnDueñoOrdenadasPorApodo(38266294).first().getApodo());

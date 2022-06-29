@@ -68,8 +68,7 @@ public class Mascota implements Comparable <Mascota> {
 
 	@Override
 	public int compareTo(Mascota o) {
-		// TODO Auto-generated method stub
-		return apodo.compareTo(o.getApodo());
+		return this.apodo.compareTo(o.getApodo());
 	}
 	
 
